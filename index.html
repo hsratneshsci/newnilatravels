@@ -1,0 +1,529 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>New nila travels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/NewNillaTravelsWeb.css" rel="stylesheet">
+<link href="css/wb17_cryptocoin.css" rel="stylesheet">
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.ui.effect.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/util.min.js"></script>
+<script src="js/collapse.min.js"></script>
+<script src="js/dropdown.min.js"></script>
+<script src="js/carousel.min.js"></script>
+<script src="js/affix.min.js"></script>
+<script src="js/wwb17.min.js"></script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#header']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeOutCirc');
+   });
+   $('#headerMenu .dropdown-toggle').dropdown({popperConfig:{placement:'bottom-start',modifiers:{computeStyle:{gpuAcceleration:false}}}});
+   $(document).on('click','.headerMenu-navbar-collapse.show',function(e)
+   {
+      if ($(e.target).is('a') && ($(e.target).attr('class') != 'dropdown-toggle')) 
+      {
+         $(this).collapse('hide');
+      }
+   });
+   $("a[href*='#home']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_home').offset().top-68 }, 600, 'easeOutCirc');
+   });
+   $("#welcome-carousel").on('slid.bs.carousel', function(e)
+   {
+      var index = $(e.relatedTarget).index();
+      switch(index)
+      {
+         case 0:
+            AnimateCss('wb_welcome-text1', 'slide-left-in', 300, 1000);
+            AnimateCss('wb_welcome-text2', 'slide-right-in', 1000, 1000);
+            AnimateCss('welcome-button1', 'slide-down-in', 2000, 1000);
+            break;
+         case 1:
+            AnimateCss('wb_welcome-text3', 'slide-left-in', 300, 1000);
+            AnimateCss('wb_welcome-text4', 'slide-right-in', 1000, 1000);
+            AnimateCss('welcome-button2', 'slide-down-in', 2000, 1000);
+            break;
+         case 2:
+            AnimateCss('wb_welcome-text5', 'slide-left-in', 300, 1000);
+            AnimateCss('wb_welcome-text6', 'slide-right-in', 1000, 1000);
+            AnimateCss('welcome-button3', 'slide-down-in', 2000, 1000);
+            break;
+      }
+   });
+   $("#welcome-carousel").bootstrapcarousel({interval:6000, pause: false});
+   $("a[href*='#servicesLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_servicesLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#services']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_services').offset().top-68 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#buySellLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_buySellLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#firstStepsLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_firstStepsLayoutGrid').offset().top-68 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#LayoutGrid10']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_LayoutGrid10').offset().top-68 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#caseStudiesLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_caseStudiesLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#teamLayoutGrid1']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_teamLayoutGrid1').offset().top }, 600, 'easeOutSine');
+   });
+   $("a[href*='#contact']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_contact').offset().top-68 }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#links']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_links').offset().top-68 }, 600, 'easeOutCirc');
+   });
+   $("#caseStudiesCarousel").bootstrapcarousel({interval:4000, pause: false});
+   var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+   if (iOS)
+   {
+      $('#wb_home,#wb_servicesLayoutGrid,#wb_buySellLayoutGrid').css('background-attachment', 'scroll');
+   }
+});
+</script>
+<script>
+// NOTE: this code will fix the header at the top of the page. It will also change the background when in fixed mode (via the CSS classes above).
+$(document).ready(function()
+{
+   $("#wb_header").affix({offset:{top: $("#wb_header").offset().top}});
+});
+</script>
+</head>
+<body>
+<div id="wb_header">
+<div id="header">
+<div class="row">
+<div class="col-1">
+<div id="wb_headerLogo1" style="display:inline-block;width:134px;height:39px;z-index:0;">
+<h1 id="headerLogo1">New Nila</h1>
+</div>
+<div id="wb_headerLogo2" style="display:inline-block;width:113px;height:39px;z-index:1;">
+<h1 id="headerLogo2">Travels</h1>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_headerMenu" style="display:inline-block;width:100%;z-index:2;">
+<div id="headerMenu" class="headerMenu" style="width:100%;height:auto !important;">
+<div class="container">
+<div class="navbar-header">
+<button title="Hamburger Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".headerMenu-navbar-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="headerMenu-navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a href="./wb17_cryptocoin.html#home" class="nav-link">Home</a>
+</li>
+<li class="nav-item">
+<a href="#caseStudiesLayoutGrid" class="nav-link">Case Studies</a>
+</li>
+<li class="nav-item">
+<a href="#buySellLayoutGrid" class="nav-link">About</a>
+</li>
+<li class="nav-item">
+<a href="#contact" class="nav-link">Contact</a>
+</li>
+<li class="nav-item">
+<a href="#links" class="nav-link">Links</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_home">
+<div id="home-overlay"></div>
+<div id="home">
+<div class="col-1">
+<div id="wb_welcome-carousel" style="">
+<div id="welcome-carousel" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#welcome-carousel" data-slide-to="0" class="active"></li>
+<li data-target="#welcome-carousel" data-slide-to="1"></li>
+<li data-target="#welcome-carousel" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="carousel-innerframe">
+<div id="wb_welcome-text1">
+<p style="font-weight:bold;"><span style="font-weight:normal;">Welcome to </span>New Nila Travels</p>
+</div>
+<div id="wb_welcome-text2">
+<p style="font-size:13px;line-height:16px;">&nbsp;</p>
+</div>
+<a id="welcome-button1" href="#servicesLayoutGrid" target="_blank" style="display:inline-block;width:141px;height:37px;z-index:5;">LEARN MORE</a>
+</div>
+</div>
+<div class="carousel-item">
+<div class="carousel-innerframe">
+<div id="wb_welcome-text3">
+<p>safe and secure services</p>
+</div>
+<div id="wb_welcome-text4">
+<p style="font-size:27px;line-height:30px;font-weight:bold;"><span style="font-size:32px;line-height:36px;">verified drivers</span></p>
+</div>
+<a id="welcome-button2" href="#servicesLayoutGrid" target="_blank" style="display:inline-block;width:141px;height:37px;z-index:8;">LEARN MORE</a>
+</div>
+</div>
+<div class="carousel-item">
+<div class="carousel-innerframe">
+<div id="wb_welcome-text5">
+<p>You will be happy to learn about our amazing traveling plans</p>
+</div>
+<div id="wb_welcome-text6">
+<p style="font-size:27px;line-height:30px;font-weight:bold;"><span style="font-size:32px;line-height:36px;">AFFORDABLE PLANS</span></p>
+</div>
+<a id="welcome-button3" href="#servicesLayoutGrid" target="_blank" style="display:inline-block;width:141px;height:37px;z-index:11;">LEARN MORE</a>
+</div>
+</div>
+</div>
+<a class="carousel-item-left carousel-control" href="#welcome-carousel" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+</a>
+<a class="carousel-item-right carousel-control" href="#welcome-carousel" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div id="wb_servicesLayoutGrid">
+<div id="servicesLayoutGrid-overlay"></div>
+<div id="servicesLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_servicesText1">
+<p>What do we do</p>
+</div>
+<div id="wb_servicesHeading" style="display:inline-block;width:100%;z-index:27;">
+<h1 id="servicesHeading">Why Choose Us</h1>
+</div>
+<div id="wb_servicesText2">
+<p>Nila travels is different than any other Travels&nbsp; you’ve used before. Here's why:</p>
+</div>
+<div id="wb_services">
+<div id="services-overlay"></div>
+<div id="services">
+<div class="row">
+<div class="col-1">
+<div id="wb_servicesCard1" style="display:flex;width:100%;text-align:center;z-index:22;" class="card">
+   <div id="servicesCard1-card-body">
+      <div id="servicesCard1-card-item0"><i class="fa fa-lock"></i></div>
+      <div id="servicesCard1-card-item1">Protection & Security</div>
+      <div id="servicesCard1-card-item2">Safe and secure drivers </div>
+   </div>
+</div>
+<div id="wb_servicesCard2" style="display:flex;width:100%;text-align:center;z-index:23;" class="card">
+   <div id="servicesCard2-card-body">
+      <div id="servicesCard2-card-item0"><i class="fa fa-location-arrow"></i></div>
+      <div id="servicesCard2-card-item1">long travel </div>
+      <div id="servicesCard2-card-item2">long distance travel inside TamilNadu</div>
+   </div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_servicesCard3" style="display:flex;width:100%;text-align:center;z-index:24;" class="card">
+   <div id="servicesCard3-card-body">
+      <div id="servicesCard3-card-item0"><i class="fa fa-handshake-o"></i></div>
+      <div id="servicesCard3-card-item1">good customer service </div>
+      <div id="servicesCard3-card-item2">better customer service<br></div>
+   </div>
+</div>
+<div id="wb_servicesCard4" style="display:flex;width:100%;text-align:center;z-index:25;" class="card">
+   <div id="servicesCard4-card-body">
+      <div id="servicesCard4-card-item0"><i class="fa fa-recycle"></i></div>
+      <div id="servicesCard4-card-item1">Recurring Buys</div>
+      <div id="servicesCard4-card-item2">long time buyers in chennai</div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_buySellLayoutGrid">
+<div id="buySellLayoutGrid-overlay"></div>
+<div id="buySellLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_buySellHeading" style="display:inline-block;width:100%;z-index:34;">
+<h1 id="buySellHeading">Rent cars for your tours all you need to know about Nila travels</h1>
+</div>
+<div id="wb_buySellText">
+&nbsp;
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_firstStepsLayoutGrid">
+<div id="firstStepsLayoutGrid-overlay"></div>
+<div id="firstStepsLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_firstStepsHeading" style="display:inline-block;width:100%;z-index:36;">
+<h1 id="firstStepsHeading">New Nila Travels in ECR Road, Chennai<br></h1>
+</div>
+<div id="wb_firstStepsText">
+<p>New Nila Travels listed under Car Rental in ECR Road, Chennai. Check Address, Contact Number, Ratings &amp; Reviews, Photos, Maps etc</p>
+</div>
+<div id="wb_firstStepsButton" style="display:inline-block;width:111px;height:44px;z-index:38;position:relative;">
+<a href="tel:9380273232"><img src="images/img0001.png" id="firstStepsButton" alt="" width="111" height="44" style="width:111px;height:44px;">
+<div id="firstStepsButton_text"><div><span style="color:#1E90FF;font-family:Arial;font-size:15px;"><strong>Call us</strong></span></div></div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_firstStepsImage" style="display:inline-block;width:100%;height:auto;z-index:39;">
+<img src="images/WhatsApp Image 2022-07-23 at 6.29.18 PM.jpg" id="firstStepsImage" alt="" width="425" height="355">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_calcLayoutGrid">
+<div id="calcLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_calcHeading" style="display:inline-block;width:100%;z-index:40;">
+<h1 id="calcHeading">Location and overview</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid10">
+<div id="LayoutGrid10-overlay"></div>
+<div id="LayoutGrid10">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_calcImage" style="display:inline-block;width:100%;height:auto;z-index:41;">
+<img src="images/macbook-chart-bw.png" id="calcImage" alt="" width="455" height="278">
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<div id="wb_calcText">
+<p>New Nila Travels in ECR Road, Chennai is a reliable name in the industry as they aim to deliver the best experience to their customers. This has helped them build up a loyal customer base. They started their journey in 2012 and ever since, they have ensured that the customer remains at the centre of their business operations and philosophy. As they are located in a favourable neighbourhood, exactly at No 411, Opposite to IOB Bank, ECR Road, Kanathur-603112 near Opposite to IOB Bank, it is easy to locate New Nila Travels on the map. For any kind of assistance or questions, it is best to contact them directly during their business hours.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_caseStudiesLayoutGrid">
+<div id="caseStudiesLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_caseStudiesHeading" style="display:inline-block;width:100%;z-index:43;">
+<h1 id="caseStudiesHeading">Case Studies</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid11">
+<div id="LayoutGrid11">
+<div class="row">
+<div class="col-1">
+<div id="wb_caseStudiesCarousel" style="">
+<div id="caseStudiesCarousel" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#caseStudiesCarousel" data-slide-to="0" class="active"></li>
+<li data-target="#caseStudiesCarousel" data-slide-to="1"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="carousel-innerframe">
+<div id="wb_caseStudiesCard3" style="display:flex;width:100%;text-align:center;z-index:44;" class="card">
+   <div id="caseStudiesCard3-card-body">
+      <img id="caseStudiesCard3-card-item0" src="images.jpeg" width="200" height="200" alt="" title="">
+      <div id="caseStudiesCard3-card-item1">Nice journey to new Nila Travels thank you</div>
+      <div id="caseStudiesCard3-card-item2">Britto Sam Jose</div>
+      <div id="caseStudiesCard3-card-item3">youtuber  (BSJ Vlogs)</div>
+      <div id="caseStudiesCard3-card-item4"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard3-card-item5"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard3-card-item6"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard3-card-item7"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard3-card-item8"><i class="fa fa-star-half-o"></i></div>
+   </div>
+</div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="carousel-innerframe">
+<div id="wb_caseStudiesCard2" style="display:flex;width:100%;text-align:center;z-index:45;" class="card">
+   <div id="caseStudiesCard2-card-body">
+      <img id="caseStudiesCard2-card-item0" src="images/profileImg.jpg" width="110" height="110" alt="" title="">
+      <div id="caseStudiesCard2-card-item1">best service in tamilnadu with reasonable prices,best customer service </div>
+      <div id="caseStudiesCard2-card-item2">Venket</div>
+      <div id="caseStudiesCard2-card-item3">Manager  in HCL</div>
+      <div id="caseStudiesCard2-card-item4"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard2-card-item5"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard2-card-item6"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard2-card-item7"><i class="fa fa-star"></i></div>
+      <div id="caseStudiesCard2-card-item8"><i class="fa fa-star-o"></i></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div id="wb_teamLayoutGrid1">
+<div id="teamLayoutGrid1">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_teamHeading" style="display:inline-block;width:100%;z-index:47;">
+<h1 id="teamHeading">Meet Our Team</h1>
+</div>
+<div id="wb_teamText">
+<span style="color:#FFF9E8;font-family:Arial;font-size:19px;">We are professionals of tourism management and strategy planning, we value the experimentation and the smart incentives.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_contact">
+<div id="contact">
+<div class="row">
+<div class="col-1">
+<div class="col-1-padding">
+<div id="wb_contactHeading1" style="display:inline-block;width:100%;z-index:49;">
+<h2 id="contactHeading1">Get a Free Quote</h2>
+</div>
+<div id="wb_contactText1">
+<p>mail us to get a price</p>
+</div>
+<div id="wb_contactIcon1" style="display:inline-block;width:64px;height:64px;text-align:center;z-index:51;">
+<div id="contactIcon1"><i class="fa fa-envelope-o"></i></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div class="col-2-padding">
+<label for="contactName" id="contactLabel1" style="display:block;width:100%;line-height:18px;z-index:52;">Name</label>
+<input type="text" id="contactName" style="display:block;width: 100%;height:34px;z-index:53;" name="Editbox1" value="" spellcheck="false">
+<label for="contactEmail" id="contactLabel2" style="display:block;width:100%;line-height:18px;z-index:54;">Email</label>
+<input type="text" id="contactEmail" style="display:block;width: 100%;height:34px;z-index:55;" name="email" value="" spellcheck="false">
+<label for="contactMessage" id="contactLabel3" style="display:block;width:100%;line-height:18px;z-index:56;">Message</label>
+<textarea name="message" id="contactMessage" style="display:block;width: 100%;;height:100px;z-index:57;" rows="4" cols="43" autocomplete="off" spellcheck="false"></textarea>
+<input type="submit" id="contactButton" name="" value="Send Message" style="display:inline-block;width:155px;height:39px;z-index:58;">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid">
+<div id="LayoutGrid">
+<div class="col-1">
+</div>
+<div class="col-2">
+</div>
+</div>
+</div>
+<div id="wb_links">
+<div id="links">
+<div class="row">
+<div class="col-1">
+<div id="wb_linksCard1" style="display:flex;width:100%;z-index:59;" class="card">
+   <div id="linksCard1-card-body">
+      <div id="linksCard1-card-item0">New Nila travels</div>
+      <div id="linksCard1-card-item1">Proprietors D.Simson Sundar</div>
+      <div id="linksCard1-card-item2">East Coast Road, Kanathur</div>
+      <div id="linksCard1-card-item3">Chennai -603112 (OPP. IOB bank)</div>
+      <div id="linksCard1-card-item4">Phone: +91 9841082820</div>
+      <div id="linksCard1-card-item5">Email: travels.newnila@gmail.com</div>
+      <div id="linksCard1-card-item6"><a href="https://www.instagram.com/newnilatravels/" title="Instagram"><i class="fa fa-instagram"></i></a></div>
+      <div id="linksCard1-card-item7"><i class="fa fa-facebook"></i></div>
+   </div>
+</div>
+</div>
+<div class="col-2">
+</div>
+</div>
+</div>
+</div>
+<div id="wb_footer">
+<div id="footer">
+<div class="row">
+<div class="col-1">
+<div id="wb_footerText">
+<p>Copyright © 2021 Nila Travels.&nbsp; </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="upStickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:78;">
+<div id="wb_upIcon" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:61;">
+<a href="./wb17_cryptocoin.html#home"><div id="upIcon"><i class="fa fa-arrow-up"></i></div></a></div>
+</div>
+
+
+
+</body>
+</html>
